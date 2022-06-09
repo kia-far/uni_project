@@ -1,5 +1,8 @@
 package com.company;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.sql.*;
 
 public class Repository implements AutoCloseable {
@@ -15,7 +18,7 @@ public class Repository implements AutoCloseable {
     }
 
     public void showName() throws SQLException{
-        preparedStatement = connection.prepareStatement("select First name from student");
+        preparedStatement = connection.prepareStatement("select * from student");
         resultSet = preparedStatement.executeQuery();
         while (resultSet.next()){
             System.out.println(resultSet.getString(1));

@@ -6,7 +6,6 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         Repository repository = new Repository();
-       System.out.println(repository.showName());
-
+        repository.showName();
     }
 }
